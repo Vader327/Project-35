@@ -1,2 +1,2 @@
-# Paint It!
-An online universal Paint application.
+# Survey
+A survey for schools.
