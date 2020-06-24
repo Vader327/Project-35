@@ -4,71 +4,206 @@ html, body {
 }
 
 canvas{
-  padding: 0;
-  margin: auto;
   display: block;
-  border: 2px solid black;
-  border: solid #f79533;
-  border-radius: 2em;
-  border-width: 0.2cm;
-  -webkit-animation: border_gradient 5s ease alternate infinite;
 }
 
-#clear_button{
+#input{
+  border-radius: 35px;
+  border: 2px solid rgb(0, 183, 255);
   font-family: 'Quicksand';
-  font-weight: 600;
-  font-size: 25px;
-  width: 6cm;
-  height: 1.5cm;
-  background: transparent;
-  border: solid #f79533;
-  border-width: 0.1cm;
-  border-radius: 1.5em;
-  -webkit-animation: border_gradient_button 5s ease alternate infinite;
-  transition: all 0.2s ease-in-out;
+  width: 8cm;
+  font-size: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  transition: border-color 0.5s ease-in-out;
+  -webkit-animation: fadein 6s;
+}
+#input:focus{
+  border-color:rgb(121, 218, 153);
+  transition: all 0.5s ease-in-out;
   outline: none;
 }
-#clear_button:hover{
+#input:invalid{
+  border-color:rgb(226, 92, 75);
+  transition: all 0.5s ease-in-out;
+  outline: none;
+}
+
+#header{
+  font-family: 'Duru Sans';
+  font-weight: 900; 
+  font-size: 60px;
+  background: linear-gradient(270deg, #f3951a, #0fae5b, #0c85a1, #4586ff);
+  background-size: 800% 800%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: fadein 6s;
+}
+
+#info{
+  font-family: 'Quicksand';
+  font-weight: 900; 
+  font-size: 20px;
+  color: rgb(0, 150, 196);
+  -webkit-animation: fadein 6s;
+}
+
+#submit{
+  color: white;
+  font-family: 'Quicksand';
+  font-weight: 900; 
+  font-size: 15px;
+  border-radius: 1.5em;
+  border: none;
+  width: 3.7cm;
+  height: 0.8cm;
+  background: linear-gradient(to right, #67b26b, #4ca2cb);
+  text-align: center;
+  transition: all 0.4s;
+  cursor: pointer;
+  outline: none;
+  -webkit-animation: fadein 6s;
+}
+#submit:hover{
   transform: scale(1.1);
   outline: none;
 }
 
-#slider{
-  width: 200px;
-  transform: scale(2);
-}
+#head_done{
+  font-family: 'Duru Sans';
+  font-weight: 900; 
+  font-size: 60px;
+  background: linear-gradient(270deg, #e19f1a, #0fae5b, #0c85a1, #9c6dea);
+  background-size: 800% 800%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
-#values{
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+#info_done{
   font-family: 'Quicksand';
-  font-weight: 600;
-  font-size: 25px;
-}
+  font-weight: 900; 
+  font-size: 20px;
+  color: rgb(0, 150, 196);
 
-#color_picker{
-  background: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+#input_done{
+  border-radius: 35px;
+  border: 2px solid rgb(0, 183, 255);
+  font-family: 'Quicksand';
+  width: 8cm;
+  font-size: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.527);
+  transition: border-color 0.5s ease-in-out;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+#submitted{
+  color: white;
+  font-family: 'Quicksand';
+  font-weight: 900; 
+  font-size: 15px;
+  border-radius: 1.5em;
   border: none;
-  width: 70px;
-  height: 40px;
+  width: 3.7cm;
+  height: 0.8cm;
+  background: linear-gradient(to right, #67b26b, #4ca2cb);
+  text-align: center;
+  transition: all 0.4s;
+  cursor: pointer;
   outline: none;
-}
-  
-@-webkit-keyframes border_gradient {
-  0%{border: solid #f37055;border-width: 0.2cm;}
-  10%{border: solid #ef4e7b;border-width: 0.2cm;}
-  20%{border: solid #a166ab;border-width: 0.2cm;}
-  30%{border: solid #5073b8;border-width: 0.2cm;}
-  40%{border: solid #1098ad;border-width: 0.2cm;}
-  50%{border: solid #07b39b;border-width: 0.2cm;}
-  60%{border: solid #6fba82;border-width: 0.2cm;}
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }
 
-@-webkit-keyframes border_gradient_button {
-  0%{border: solid #f37055;border-width: 0.1cm;}
-  10%{border: solid #ef4e7b;border-width: 0.1cm;}
-  20%{border: solid #a166ab;border-width: 0.1cm;}
-  30%{border: solid #5073b8;border-width: 0.1cm;}
-  40%{border: solid #1098ad;border-width: 0.1cm;}
-  50%{border: solid #07b39b;border-width: 0.1cm;}
-  60%{border: solid #6fba82;border-width: 0.1cm;}
+
+
+#question{
+  font-family: 'Duru Sans';
+  font-weight: 500; 
+  font-size: 20px;
+  color: black;
+  -webkit-animation: fadein 6s;
 }
-  
+
+#input1{
+  outline: none;
+	border:0;
+	border-bottom: 2px solid #008cff;
+	font-family: 'Quicksand';
+  font-size: 15px;
+  font-weight: 400;
+	color: black;
+	background: transparent;
+  width: 16cm;
+  transition: border 0.4s ease-in-out;
+  -webkit-animation: fadein 6s;
+}
+#input1:focus{
+  border-bottom: 2px solid rgb(174, 240, 67);
+  outline: none;
+  transition: border 0.4s ease-in-out;
+}
+
+#dropdown{
+  width: 5cm;
+  cursor: pointer;
+  font-family: 'Quicksand';
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 1.5em;
+  border: 2px solid rgb(0, 183, 255);
+  outline: none;
+  transition: 0.5s border-color;
+  -webkit-animation: fadein 6s;
+}
+#dropdown:hover{
+  border-color:rgb(121, 218, 153);
+  transition: 0.5s border-color;
+}
+
+#thanks{
+  font-family: 'Comfortaa';
+  font-weight: 900; 
+  font-size: 70px;
+  background: linear-gradient(270deg, #f3951a, #0fae5b, #0c85a1, #4586ff);
+  background-size: 800% 800%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: fadein 6s;
+}
+
+
+@-webkit-keyframes Gradient{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@-webkit-keyframes border_gradient {
+  0%{border: solid #f37055;border-width: 2px;}
+  10%{border: solid #ef4e7b;border-width: 2px;}
+  20%{border: solid #a166ab;border-width: 2px;}
+  30%{border: solid #5073b8;border-width: 2px;}
+  40%{border: solid #1098ad;border-width: 2px;}
+  50%{border: solid #07b39b;border-width: 2px;}
+  60%{border: solid #6fba82;border-width: 2px;}
+}
+
+@-webkit-keyframes fadein {
+  from{opacity: 0;}
+  to{opacity: 1;}
+}
